@@ -1,0 +1,153 @@
+\section{De Morgan's Laws}
+\[
+(A\cap B)^c = A^c\cup B^c
+\]
+\[
+(A\cup B)^c = A^c\cap B^c
+\]
+
+
+
+\begin{theorem} For any $n\in\mathbb{N}$,
+\[
+(A_1\cup A_2\cup\cdots\cup A_n)^c = A_1^c\cap A_2^c\cap\cdots\cap A_n^c
+\]
+\end{theorem}
+\begin{proof}
+Assume we have proved the De Morgan laws for two sets.  By this result, 
+\[
+A_1\cup A_2)^c = A_1^c\cap A_2^c  
+\]
+
+Suppose 
+\[
+(A_1\cup A_2 \cup\cdots\cup A_n)^c = A_1^c\cap A_2^c\cap\cdots\cap A_n^c
+\]
+We need to show that 
+\[
+(A_1\cup A_2 \cup\cdots\cup A_{n+1})^c = A_1^c\cap A_2^c\cap\cdots\cap A_{n+1}^c
+\]
+By hypothesis,
+\[
+(A_1\cup A_2 \cup\cdots\cup A_n)^c = (A_1^c\cap A_2^c\cap\cdots\cap A_n^c)
+\]
+By the case witn $n=2$,
+\[
+[(A_1\cup A_2 \cup\cdots\cup A_n)\cup A_{n+1}]^c = (A_1\cup A_2\cup\cdots\cup A_n)^c\cap A_{n+1}^c
+\]
+
+\[
+[(A_1\cup A_2 \cup\cdots\cup A_n)\cup A_{n+1}]^c = (A_1^c\cap A_2^c\cap\cdots\cap A_n^c)\cap A_{n+1}^c
+\]
+which simplifies to
+\[
+(A_1\cup A_2 \cup\cdots\cup A_{n+1})^c = A_1^c\cap A_2^c\cap\cdots\cap A_{n+1}^c
+\]
+By the principle of induction, this establishes the theorem for any $n\in\mathbb{N}$.
+\end{proof}
+\begin{theorem}
+If $\{A_i\}_{i=1}^\infty$ is a collection of sets, then
+\[
+\left(\bigcup_{i=1}^\infty A_i\right)^c = \bigcap_{i=1}^\infty A_i^c
+\] 
+\end{theorem}
+\begin{proof}
+We need to show that
+\[
+\left(\bigcup_{i=1}^\infty A_i\right)^c \subseteq \bigcap_{i=1}^\infty A_i^c
+\] 
+and
+\[
+\left(\bigcup_{i=1}^\infty A_i\right)^c \supseteq \bigcap_{i=1}^\infty A_i^c
+\] 
+To show that 
+\[
+\left(\bigcup_{i=1}^\infty A_i\right)^c \subseteq \bigcap_{i=1}^\infty A_i^c
+\] 
+we must show that every element of
+\[
+\left(\bigcup_{i=1}^\infty A_i\right)^c
+\] 
+belongs to
+\[
+\bigcap_{i=1}^\infty A_i^c
+\] 
+Suppose
+\[
+x\in\left(\bigcup_{i=1}^\infty A_i\right)^c
+\] 
+Then
+\[
+x\notin A_i,\quad i=1,2,\ldots
+\]
+but this equivalent to saying that
+\[
+x\in A_i^c,\quad i=1,2,\ldots
+\] 
+which means
+\[
+x\in \bigcap_{i=1}^\infty A_i^c
+\] 
+since $x$ was an arbitrarily chosen, every element of
+\[
+\left(\bigcup_{i=1}^\infty A_i\right)^c
+\] 
+belongs to
+\[
+\bigcap_{i=1}^\infty A_i^c
+\]
+so 
+\[
+\left(\bigcup_{i=1}^\infty A_i\right)^c \subseteq \bigcap_{i=1}^\infty A_i^c
+\] 
+Now suppose
+\[
+x\in \bigcap_{i=1}^\infty A_i^c
+\] 
+then
+\[
+x\in A_i^c,\quad i=1,2,\ldots
+\]
+This means that 
+\[
+x\notin A_i,\quad i=1,2,\ldots
+\]
+so
+\[
+x\notin \bigcup_{i=1}^\infty A_i
+\]
+which means that
+\[
+x \in \left(\bigcup_{i=1}^\infty A_i\right)^c
+\] 
+Since $x$ was arbitrarily chosen, every element of
+\[
+\left(\bigcup_{i=1}^\infty A_i\right)^c
+\] 
+belongs to
+\[
+\bigcap_{i=1}^\infty A_i^c
+\] 
+which establishes that
+\[
+\left(\bigcup_{i=1}^\infty A_i\right)^c \supseteq \bigcap_{i=1}^\infty A_i^c
+\] 
+\end{proof}
+\section{Image of a set under a function}
+\begin{definition}[image of a set] If $f:D\rightarrow\mathbb{R}$ and $A\subseteq D$, then the image of $A$ under $f$, denoted by $f(A)$, is
+\[
+f(A) = \{f(x) : x\in A\}
+\]
+
+\end{definition}
+
+\section{Inverse image of a set}
+\begin{definition}[inverse image of a set] Let $f:D\rightarrow\mathbb{R}$ and $B\subseteq\mathbb{R}$.  The inverse image of $B$ under $f$, denoted by $f^{-1}(B)$ is defined as:
+\[
+f^{-1}(B) = \{x\in D : f(x)\in B\}
+\]
+\end{definition}
+
+
+
+

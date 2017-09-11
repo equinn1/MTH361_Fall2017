@@ -1,0 +1,205 @@
+\section{The Axiom of Completeness}
+
+\begin{definition}[Cartesian product] If $A$ and $B$ are sets, the \textbf{Cartesian product} of $A$ and $B$, denoted by $A\times B$, is the set of all ordered pairs whose first element belongs to $A$ and second element belongs to $B$:
+\[
+A\times B = \{(a,b) : a\in A\quad\mbox{and}\quad b\in B\} 
+\]
+\end{definition}
+
+The Cartesian product is an extremely useful construct.
+
+
+If we start with the natural numbers
+\[
+\mathbb{N}=\{1,2,3,\ldots\} 
+\]
+we can define an addition operation '+',  
+\[
++ : \mathbb{N}\times\mathbb{N} \rightarrow \mathbb{N}
+\]
+where the operator $\times$ denotes the \textbf{Cartesian product} of $\mathbb{N}$ with itself.
+\par\vspace{0.3 cm}
+$\mathbb{N}\times\mathbb{N}$, which is sometimes written as $\mathbb{N}^2$, is a precise way of specifying the set of all ordered pairs 
+of natural numbers.
+\par\vspace{0.3 cm}
+For any two elements $a,b\in\mathbb{N}$, we use the notation $a+b$ to denote the sum, rather than the usual function notation $+(a,b)$.
+\par\vspace{0.3 cm}
+We can extend $\mathbb{N}$ to a larger set, $\mathbb{Z}$ (the integers) by adding a zero element $0$ and a negative element $-a$ corresponding to every $a\in\mathbb{N}$.
+\par\vspace{0.3 cm}
+If we extend the '+' operation to $\mathbb{Z}$, the integers together with '+' form a group.
+\par\vspace{0.3 cm}
+We can further extend $\mathbb{Z}$ to the rational numbers $\mathbb{Q}$ by introducing first introducing a second operation (multiplication) '$\cdot$' on $\mathbb{Z}^2$:
+\[
+\cdot : \mathbb{Z}\times\mathbb{Z}\rightarrow\mathbb{Z}
+\]
+and an inverse operation '/' (division) on $\mathbb{Z}\times(\mathbb{Z}\setminus\{0\})$:
+\[
+/ : \mathbb{Z}\times(\mathbb{Z}\setminus\{0\})\rightarrow\mathbb{Q}
+\] 
+\par\vspace{0.3 cm}
+Together with the operations '+' and '$\cdot$', $\mathbb{Q}$ forms a field.  A formal definition appears in Section 8.6 of the text:
+\par\vspace{0.3 cm}
+\begin{definition}[field] A set $F$ is called a \textbf{field} if there exist two operations $(x+y)$ and $x\cdot y$ that satisfy the following conditions:
+\begin{itemize} 
+\item Commutativity: $x+y=y+x$ and $x\cdot y = y\cdot x\quad\forall x,y\in F$ 
+\item Associativity: $(x+y)+z=x+(y+z)$ and $(x\cdot y)\cdot z=x\cdot(y\cdot z)\quad\forall x,y,z\in F$
+\item Identities: There are two special elements $0$ and $1$ with $0\neq1$ such that $x+0=x$ and $x\cdot1=x\quad\forall x\in F$
+\item Inverses: Given $x\in F$, there exists $-x\in F$ such that $x+(-x)=0$.  If $x\neq0$, there exists $x^{-1}\in F$ such that $x\cdot x^{-1}=1$
+\item Distributive: $x\cdot(y+z) = x\cdot y+ x\cdot z\quad\forall x,y,z\in F$ 
+\end{itemize}
+\end{definition}
+\par\vspace{0.3 cm}
+The fact that $\mathbb{Q}$ is a field allows us to perform all familiar algebraic operations on elements of $\mathbb{Q}$.
+\par\vspace{0.3 cm}
+In addition to algebraic the properties, we will assume $\mathbb{Q}$ has the familiar order properties, which somewhat informally we will state as:
+\[
+\forall x,y\in\mathbb{Q}:\quad x<y,\quad x=y,\quad\mbox{or}\quad x>y
+\] 
+\par\vspace{0.3 cm}
+In the 1870s, a number of ways to rigorously construct $\mathbb{R}$ from $\mathbb{Q}$ were proposed.  
+\par\vspace{0.3 cm}
+While these are of historical interest, at this stage we will make do with a less formal construction of $\mathbb{R}$.
+\par\vspace{0.3 cm}
+We will assume that $\mathbb{R}\supset\mathbb{Q}$, that the properties of addition and multiplication on $\mathbb{Q}$ extend to $\mathbb{R}$ in such a way that $\mathbb{R}$ together with these operations forms a field, and that $\mathbb{R}$ has order properties similar to $\mathbb{Q}$.
+\par\vspace{0.3 cm}
+In other words, we will assume that $\mathbb{R}$ is an ordered field that contains $\mathbb{Q}$ as a subfield.
+\par\vspace{0.3 cm}
+We have previously established that $\sqrt{2}\notin\mathbb{Q}$, and we want to ensure that $\mathbb{R}$ does not have these gaps.
+\par\vspace{0.3 cm}
+The precise formulation of this assumption is referred to as the \textbf{axiom of completeness}.  It is an axiom because we will assume that it is true without proof.
+\par\vspace{0.3 cm}
+Some students are troubled by the fact that we simply assume the axiom of completeness is true, since it plays such an important role.
+\par\vspace{0.3 cm}
+In fact, once we assume the axiom of completeness, we can prove a number of important theorems, but a number of those theorems could serve as the starting axiom, and this would allow us to prove the axiom of completeness.
+\par\vspace{0.3 cm}
+What is not possible is to start with no assumptions, and develop the subject of analysis from 'thin air'.  Since we have to assume something, the axiom of completeness is a good thing to assume to start our development of the subject.
+\par\vspace{0.3 cm}
+\begin{axiom}[Axiom of Completeness] Every nonempty set of real numbers that is bounded above has a least upper bound.
+\end{axiom}
+\section{Least Upper Bounds and Greatest Lower Bounds}
+\begin{definition}[bounded above] A set $A\subseteq\mathbb{R}$ is \textbf{bounded above} if there exists a number $b\in\mathbb{R}$ such that $a\leq b$ for all $a\in A$. 
+\end{definition}
+\par\vspace{0.3 cm}
+\begin{definition}[upper bound] The number $b$ is called an \textbf{upper bound} for $A\subseteq\mathbb{R}$ if:
+\[
+a\leq b\quad\mbox{for all}\quad a\in A
+\]
+\end{definition}
+\par\vspace{0.3 cm}
+\begin{definition}[bounded below] A set $A\subseteq\mathbb{R}$ is \textbf{bounded below} if there exists a number $l\in\mathbb{R}$ such that $a\geq l$ for all $a\in A$. 
+\end{definition}
+\par\vspace{0.3 cm}
+\begin{definition}[lower bound] The number $l$ is called a \textbf{lower bound} for $A\subseteq\mathbb{R}$ if:
+\[
+a\geq l\quad\mbox{for all}\quad a\in A
+\]
+\end{definition}
+\par\vspace{0.3 cm}
+\begin{definition}[least upper bound] A real number $s$ is the \textbf{least upper bound} for a set $A\subseteq\mathbb{R}$ if it meets the following criteria:
+\par\vspace{0.3 cm}
+\begin{itemize}
+\item $s$ is an upper bound for $A$
+\item If $b$ is any upper bound for $A$, then $s\leq b$
+\end{itemize}
+\end{definition}
+\par\vspace{0.3 cm}
+The least upper bound is also called the \textbf{supremum} of $A$, and denoted by $\sup A$.
+\par\vspace{0.3 cm}
+\begin{theorem} If $A\subseteq\mathbb{R}$ has a least upper bound $s$, then $s$ is unique.
+\end{theorem}
+\begin{proof} Suppose $A\subseteq\mathbb{R}$ is bounded above.  By the axiom of completeness, $A$ has a least upper bound.  Suppose $s_1$ and $s_2$ are both least upper bounds for $A$.  By definition, both $s_1$ and $s_2$ are upper bounds.  Since $s_1$ is a least upper bound and $s_2$ is an upper bound, $s_1\leq s_2$.  By a similar argument, $s_2\leq s_1$.  Together, these inequalities imply that $s_1=s_2$.  
+\end{proof}
+\par\vspace{0.3 cm}
+\begin{definition}[maximum] A real number $a_0$ is a \textbf{maximum} of $A\subseteq\mathbb{R}$ if $a_0\in A$ and $a\leq a_0$ for all $a\in A$.
+\end{definition}
+\par\vspace{0.3 cm}
+The distinction between a maximum and a supremum is that a maximum is required to be an element of the set.
+\par\vspace{0.3 cm}
+If $A\subseteq\mathbb{R}$ is bounded above, the axiom of completeness guarantees that $A$ has a supremum.  It does not guarantee that it has a maximum.
+\par\vspace{0.3 cm}
+\begin{example}
+Let
+\[
+A = \bigcup_{i=1}^\infty \left[0,2-\frac{1}{i}\right)
+\]
+\par\vspace{0.3 cm}
+Since for any $i\in\mathbb{N}$,
+\[
+2-\frac{1}{i} < 2
+\]
+we can say that $2$ is an upper bound for $A$.  We claim that $A$ is the least upper bound.  To see this, suppose $b<2$ is an upper bound for $A$.  Suppose there is an $n$ that satisfies the following inequality:
+\[
+b < 2-\frac{1}{n}
+\]
+Then
+\[
+\frac{1}{n} < 2-b \quad\mbox{and}\quad n > \frac{1}{2-b}
+\]
+Since $n$ can be arbirarily large, if we choose $n$ larger than $1/(2-b)$, there will be elements of $A_n$ that are greater than $b$, contradicting the assumption that $b$ is an upper bound for $A$.  This establishes that no number less than $2$ can be an upper bound for $A$, so because $2$ is an upper bound for $A$, it is the least upper bound.
+\par\vspace{0.3 cm}
+Since every element of $A$ is less than $2$, and $2$ is the smallest upper bound, no element of $A$ can be an upper bound for $A$, which is another way of saying that $A$ does not have a maximum element.
+\end{example}
+\par\vspace{0.3 cm}
+\begin{example}
+A subtle, but important point is that the axiom of completeness does not hold for the rationals $\mathbb{Q}$.  
+\par\vspace{0.3 cm}
+Suppose
+\[
+A\subseteq\mathbb{Q} = \{x\in\mathbb{Q} : x^2 < 2\}
+\]
+\par\vspace{0.3 cm}
+The set of possible upper bounds is the set of rational numbers greater than or equal to $sqrt{2}$.  Since we can never have inequality, 
+the is the same as the set of rational numbers greater than $\sqrt{2}$. 
+\par\vspace{0.3 cm}
+This set has no smallest element.  That is to say, there is no rational number "next to" $\sqrt{2}$ on the right.
+\par\vspace{0.3 cm}
+Given any rational number $q$ that is greater than $\sqrt{2}$, we can always find another rational number $q_0$ with $\sqrt{2}<q_0<q$.
+\par\vspace{0.3 cm}
+One way to show this is to consider Newton's method for finding the roots of $f(x) = x^2-2$.
+\par\vspace{0.3 cm}
+Recall that Newton's method works by approximating the function $f(x)$ with its tangent line at $x=x_0$.   Using the point-slope formula, the equation of the tangent line to the graph of $f(x)$ at $x=x_0$ is:
+\[
+y-f(x_0) = f'(x_0)(x-x_0)\quad or \quad y = f'(x_0)(x-x_0)+f(x_0)
+\]
+\par\vspace{0.3 cm}
+Newton's method uses the $x-intercept$ of the tangent line, which is easy to compute, as an approximation for the solution to $f(x)=0$, which presumably is hard to compute.
+\par\vspace{0.3 cm}
+The $x$-intercept of the tangent line is obtained by solving the equation
+\[
+0 = f'(x_0)(x-x_0)+f(x_0)
+\]
+for $x$:
+\[
+-f(x_0) = f'(x_0)(x-x_0)
+\]
+\[
+-\frac{f(x_0}{f'(x_0} = x - x_0
+\]
+\[
+x_0-\frac{f(x_0)}{f'(x_0} = x
+\]
+\par\vspace{0.3 cm}
+If we choose $x_0$ to the right of $\sqrt{2}$, say $x_0=1.5$, Newtons's method will produce an infinite sequence of rational numbers with each one lying between $\sqrt{2}$ and the previous element in the sequence.
+\par\vspace{0.3 cm}
+Another way to visualize this is to imagine $f(x)=x^2-2$ defined on the rational numbers:
+\[
+f:\mathbb{Q}\rightarrow\mathbb{Q}\quad by\quad f(x)=x^2-2,\quad x\in\mathbb{Q}
+\]
+There is no point on the graph of this function at $x=\sqrt{2}$, because $\sqrt{2}$ is not in the domain.
+\end{example}
+\par\vspace{0.3 cm}
+The following characterization of suprema provides a useful method for proving statements about them:
+\par\vspace{0.3 cm}
+\begin{lemma} Assume $s\in\mathbb{R}$ is an upper bound for the set $A\subseteq\mathbb{R}$.  Then $s=\sup A$ if and only if, 
+for every $\epsilon>0$, there exista an $a\in A$ such that $s-\epsilon < a$.
+\end{lemma}
+\par\vspace{0.3 cm}
+Informally, the lemma states that $s$ is the least upper bound of $A$ if and only any number smaller than $s$ is not an upper bound for $A$.
+\par\vspace{0.3 cm}
+\begin{proof}($\Rightarrow$) Suppose $s=\sup A$ and consider $s-\epsilon$ for some arbirtarily chosen $\epsilon>0$. Because $s-\epsilon < s$ and $s=\sup A$, by definition $s-\epsilon$ is not an upper bound for $A$, so there must exist some $a\in A$ with $s-\epsilon<a$.
+\par\vspace{0.3 cm}
+($\Leftarrow$) Now assume $s$ is an upper bound for $A$ with the property that, for any $\epsilon>0$, $s-\epsilon$ is not an upper bound for $A$. Since any $b<s$ can be expressed as $b=s-\epsilon$ for some $\epsilon>0$, this means that no number less than $s$ can be an upper bound for $A$.  Therefore, if $c$ is any upper bound of $A$, then $s\leq c$.  This establishes that $s=\sup A$.
+\end{proof}
+
+
+
